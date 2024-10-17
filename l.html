@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tỏ tình</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+
+        .heart {
+            color: red;
+            font-size: 100px;
+            margin-bottom: 20px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .message {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #ff4d4d;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #ff3333;
+        }
+
+        .response-buttons {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .response-buttons button {
+            margin: 5px;
+            background-color: #4CAF50;
+        }
+
+        .response-buttons button.no {
+            background-color: #ff4d4d;
+        }
+
+        .response {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart">❤️</div>
+    <h1>Tớ có điều này muốn nói...</h1>
+    <div class="message" id="message">Nhấn vào nút bên dưới để xem...</div>
+    <button onclick="showMessage()">Tỏ tình!</button>
+
+    <div class="response-buttons" id="response-buttons">
+        <h2>Cậu có thích tớ không?</h2>
+        <button onclick="replyYes()">Có</button>
+        <button class="no" onclick="replyNo()">Không</button>
+    </div>
+
+    <div class="response" id="response"></div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerHTML = "Tớ thích cậu rất nhiều! 💖";
+            document.getElementById("response-buttons").style.display = "block";
+        }
+
+        function replyYes() {
+            document.getElementById("response").innerHTML = "Tớ biết mà! Cậu cũng thích tớ! 💖💖💖";
+            document.getElementById("response-buttons").style.display = "none";
+        }
+
+        function replyNo() {
+            document.getElementById("response").innerHTML = "Không sao đâu... Tớ sẽ cố gắng hơn! 😢";
+            document.getElementById("response-buttons").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
